@@ -3,7 +3,6 @@
 import {
   BadgeCheck,
   Bell,
-  ChevronsUpDown,
   CreditCard,
   LogOut,
   Sparkles,
@@ -29,6 +28,9 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar"
+import { useRouter } from "next/navigation"
+import { useState } from "react"
+import LoadingDot from "../Common/LoadingDot"
 
 const NavUser = ({
     name,
@@ -40,7 +42,18 @@ const NavUser = ({
     email: string
     avatarUrl: string
 }) => {
-  const { isMobile } = useSidebar()
+  // const { isMobile } = useSidebar();
+  const router = useRouter();
+
+  const [loading, setLoading] = useState(false);
+
+  const onSignout = () => {
+     setLoading(!loading);
+     setTimeout(() => {
+         router.push('/signin');
+       }, 1500); 
+   };
+ 
 
   return (
     <SidebarMenu>
@@ -62,8 +75,8 @@ const NavUser = ({
           </DropdownMenuTrigger>
           <DropdownMenuContent
             className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
-            side={isMobile ? "bottom" : "bottom"}
-            align="end"
+            side="bottom"
+            align="center"
             sideOffset={4}
           >
             <DropdownMenuLabel className="p-0 font-normal">
@@ -101,9 +114,12 @@ const NavUser = ({
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>
-              <LogOut />
-              Log out
+            <DropdownMenuItem
+            onClick={onSignout}
+            >
+              {
+                loading ? <LoadingDot/> : <><LogOut /> Log out</>
+              }
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

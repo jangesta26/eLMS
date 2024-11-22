@@ -8,9 +8,9 @@ const SignupForm = () => {
         setEyeOpen(!eyeOpen)
     }
   return (
-    <form className="max-w-lg w-full mx-auto">
-        <div className="mb-12 space-y-2">
-            <h3 className="text-gray-800 md:text-3xl text-2xl font-extrabold max-md:text-center">Create an account</h3>
+    <form className="max-w-md md:ml-auto w-full px-0">
+        <div className="mb-8 space-y-2">
+            <h3 className="text-gray-800 md:text-3xl text-2xl font-extrabold">Create an account</h3>
             <p className='text-muted-foreground'>Create a new account by filling out the form below.</p>
         </div>
         <div>
@@ -65,7 +65,7 @@ const SignupForm = () => {
                      <>
                     <svg
                     xmlns="http://www.w3.org/2000/svg" 
-                    fill="#bbb" stroke="#bbb" className="w-[18px] h-[18px] absolute right-2 cursor-pointer" viewBox="0 0 48 48"><path d="M45.3,22.1C43.2,19.5,35.4,11,24,11a23.4,23.4,0,0,0-3.8.3L23.8,15H24c8.8,0,15.3,6.2,17.7,9a33.7,33.7,0,0,1-4.6,4.3l2.8,2.8a30.1,30.1,0,0,0,5.4-5.2A3,3,0,0,0,45.3,22.1Z"></path> <path d="M29.4,26.6A5.8,5.8,0,0,0,30,24a6,6,0,0,0-6-6,5.8,5.8,0,0,0-2.6.6L9.7,6.9A2,2,0,0,0,6.9,9.7l4.7,4.8a32.1,32.1,0,0,0-8.9,7.6,3,3,0,0,0,0,3.8C4.8,28.5,12.6,37,24,37a23,23,0,0,0,8.5-1.6l5.8,5.7a2,2,0,1,0,2.8-2.8ZM24,33c-8.8,0-15.3-6.2-17.7-9a29.7,29.7,0,0,1,8.3-6.6l4,4A5.8,5.8,0,0,0,18,24a6,6,0,0,0,6,6,5.8,5.8,0,0,0,2.6-.6l2.8,2.8A19.1,19.1,0,0,1,24,33Z"></path></svg>
+                    fill="#bbb" stroke="#bbb" className="w-[19px] h-[19px] absolute right-2 cursor-pointer" viewBox="0 0 48 48"><path d="M45.3,22.1C43.2,19.5,35.4,11,24,11a23.4,23.4,0,0,0-3.8.3L23.8,15H24c8.8,0,15.3,6.2,17.7,9a33.7,33.7,0,0,1-4.6,4.3l2.8,2.8a30.1,30.1,0,0,0,5.4-5.2A3,3,0,0,0,45.3,22.1Z"></path> <path d="M29.4,26.6A5.8,5.8,0,0,0,30,24a6,6,0,0,0-6-6,5.8,5.8,0,0,0-2.6.6L9.7,6.9A2,2,0,0,0,6.9,9.7l4.7,4.8a32.1,32.1,0,0,0-8.9,7.6,3,3,0,0,0,0,3.8C4.8,28.5,12.6,37,24,37a23,23,0,0,0,8.5-1.6l5.8,5.7a2,2,0,1,0,2.8-2.8ZM24,33c-8.8,0-15.3-6.2-17.7-9a29.7,29.7,0,0,1,8.3-6.6l4,4A5.8,5.8,0,0,0,18,24a6,6,0,0,0,6,6,5.8,5.8,0,0,0,2.6-.6l2.8,2.8A19.1,19.1,0,0,1,24,33Z"></path></svg>
 
                      </>   
                 )

@@ -1,8 +1,22 @@
-import React from 'react'
+'use client'
+import { useRouter } from 'next/navigation'
+import React, { useState } from 'react'
+import LoadingDot from '../Common/LoadingDot';
 
 const SigninForm = () => {
+ const router = useRouter();
+ const [loading, setLoading] = useState(false);
+
+ const onSubmit = () => {
+    setLoading(!loading);
+    setTimeout(() => {
+        router.push('/');
+      }, 2000); 
+  };
+
+
   return (
-    <form className="max-w-md md:ml-auto w-full">
+    <form className="max-w-md md:ml-auto">
         <h3 className="text-gray-800 text-3xl font-extrabold mb-8">
         Sign in
         </h3>
@@ -28,8 +42,14 @@ const SigninForm = () => {
         </div>
         </div>
         <div className="!mt-8">
-        <button type="button" className="w-full shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-primary/95 hover:bg-primary focus:outline-none">
-            Log in
+        <button 
+        type="submit"
+        disabled={loading}
+        onClick={onSubmit} 
+        className="w-full flex items-center justify-center shadow-xl py-2.5 px-4 text-sm font-semibold rounded text-white bg-primary/95 hover:bg-primary focus:outline-none">
+        {
+            loading ? <LoadingDot /> : 'Sign In'
+        }
         </button>
         </div>
         <div className="mt-6 my-4 flex items-center gap-4">
