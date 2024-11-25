@@ -1,4 +1,4 @@
-import OverviewStats from '@/Blocks/OverviewStats'
+import OverviewStats from '@/components/Blocks/OverviewStats'
 import { Badge } from '@/components/ui/badge'
 import { Card, CardDescription, CardTitle } from '@/components/ui/card'
 import { Label } from '@/components/ui/label'

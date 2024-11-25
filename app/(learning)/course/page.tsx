@@ -1,12 +1,8 @@
-import BlogSection from '@/Blocks/BlogSection'
-import ContentSection from '@/Blocks/ContentSection'
+import BlogSection from '@/components/Blocks/BlogSection'
+import ContentSection from '@/components/Blocks/ContentSection'
 import SearchInput from '@/components/Input/SearchInput'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
-import { Input } from '@/components/ui/input'
-import { MoveRight } from 'lucide-react'
-import Link from 'next/link'
 import React from 'react'
 
 const CoursePage = () => {
