@@ -31,6 +31,7 @@ import {
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 import LoadingDot from "../Common/LoadingDot"
+import { useTheme } from "next-themes"
 
 const NavUser = ({
     name,
@@ -44,13 +45,14 @@ const NavUser = ({
 }) => {
   // const { isMobile } = useSidebar();
   const router = useRouter();
-
+  const { setTheme } = useTheme();
   const [loading, setLoading] = useState(false);
 
   const onSignout = () => {
      setLoading(!loading);
      setTimeout(() => {
-         router.push('/signin');
+        setTheme('light');
+        router.push('/signin');
        }, 1500); 
    };
  
@@ -69,7 +71,11 @@ const NavUser = ({
                 <AvatarFallback className="rounded-lg">CN</AvatarFallback>
               </Avatar>
               <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold">{name}</span>
+                <span className="truncate font-semibold">
+                {
+                  loading ? <>Sign Out...</> : name
+                }
+                </span>
               </div>
             </SidebarMenuButton>
           </DropdownMenuTrigger>
@@ -118,7 +124,7 @@ const NavUser = ({
             onClick={onSignout}
             >
               {
-                loading ? <LoadingDot/> : <><LogOut /> Log out</>
+                loading ? <LoadingDot/> : <><LogOut /> Sign out</>
               }
             </DropdownMenuItem>
           </DropdownMenuContent>

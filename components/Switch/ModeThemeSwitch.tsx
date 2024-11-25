@@ -1,11 +1,19 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Switch } from '../ui/switch'
 import { useTheme } from 'next-themes'
 
 const ModeThemeSwitch = () => {
-    const { setTheme } = useTheme();
-    const [ mode, setMode] = useState(false);
+    const { setTheme, theme } = useTheme();
+    const [mode, setMode] = useState(false);
+
+    useEffect(() => {
+        if (theme === 'dark') {
+            setMode(true);
+        } else {
+            setMode(false);
+        }
+    }, [theme]);
 
     const handleChangeMode = () => {
         const newMode = !mode;
@@ -13,12 +21,12 @@ const ModeThemeSwitch = () => {
         setTheme(newMode ? 'dark' : 'light'); 
     };
 
-  return (
-    <Switch
-    checked={mode}
-    onCheckedChange={handleChangeMode}
-    />
-  )
+    return (
+        <Switch
+            checked={mode}
+            onCheckedChange={handleChangeMode}
+        />
+    )
 }
 
 export default ModeThemeSwitch
