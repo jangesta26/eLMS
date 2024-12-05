@@ -99,7 +99,9 @@ const NavUser = ({
             </DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem
+              onClick={()=>router.push('/subscription')}
+              >
                 <Sparkles />
                 Upgrade to Pro
               </DropdownMenuItem>

@@ -2,10 +2,14 @@
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import LoadingDot from '../Common/LoadingDot';
+import { Eye, EyeClosed, Lock, Mail } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const SigninForm = () => {
  const router = useRouter();
  const [loading, setLoading] = useState(false);
+ const [eyeOpen, setEyeOpen] = useState(false)
+ const [password, setPassword] = useState('');
 
  const onSubmit = () => {
     setLoading(!loading);
@@ -14,6 +18,15 @@ const SigninForm = () => {
       }, 2000); 
   };
 
+const handleChangeEyeOpen = () => {
+    setEyeOpen(!eyeOpen)
+}
+
+const handlePasswordChange = (e:any) => {
+    setPassword(e.target.value); 
+};
+
+
 
   return (
     <form className="max-w-md md:ml-auto">
@@ -21,11 +34,38 @@ const SigninForm = () => {
         Sign in
         </h3>
         <div className="space-y-4">
-        <div>
-            <input name="email" type="email" autoComplete="email" required className="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600" placeholder="Email address" />
+        <div className='relative flex items-center'>
+            <Mail className='absolute left-2 text-muted-foreground h-5 w-5 ' />
+            <input name="email" type="email" autoComplete="email" required className="pl-10 bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600" placeholder="Email address" />
         </div>
-        <div>
-            <input name="password" type="password" autoComplete="current-password" required className="bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600" placeholder="Password" />
+        <div className='relative flex items-center'>
+            <Lock className='absolute left-2 text-muted-foreground h-5 w-5 ' />
+            <input 
+            name="password" 
+            type={!eyeOpen ? 'password':'text'}
+            autoComplete="current-password" 
+            required 
+            className="pl-10 bg-gray-100 w-full text-sm text-gray-800 px-4 py-3.5 rounded-md outline-blue-600" 
+            placeholder="Password"
+            value={password} 
+            onChange={handlePasswordChange}
+            />
+        {
+            password && (
+            <Button 
+            variant="ghost"
+            type='button'
+            className='absolute right-2 px-0 py-0 h-10 w-10 hover:cursor-pointer bg-transparent'
+            onClick={handleChangeEyeOpen}
+            >{
+                !eyeOpen 
+                ? <EyeClosed className='text-muted-foreground '/> 
+                : <Eye className='text-muted-foreground '/>
+            }
+            </Button>
+            )
+        }
+
         </div>
         <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center">

@@ -10,7 +10,7 @@ const SignupForm = () => {
   return (
     <form className="max-w-md md:ml-auto w-full px-0">
         <div className="mb-8 space-y-2">
-            <h3 className="text-gray-800 md:text-3xl text-2xl font-extrabold">Create an account</h3>
+            <h3 className="text-gray-800 md:text-3xl text-2xl font-extrabold">Register Now</h3>
             <p className='text-muted-foreground'>Create a new account by filling out the form below.</p>
         </div>
         <div>

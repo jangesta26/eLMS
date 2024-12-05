@@ -63,11 +63,11 @@ export const data = {
         items: [
           {
             title: "Data Science",
-            url: "#",
+            url: "/course/1",
           },
           {
             title: "Business",
-            url: "#",
+            url: "/course/2",
           },
           {
             title: "Computer Science",
@@ -109,7 +109,7 @@ export const data = {
       },
       {
         title: "My course",
-        url: "#",
+        url: "/my-course",
         icon: Monitor,
         items: [
           {

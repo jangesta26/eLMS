@@ -38,8 +38,8 @@ const NavMain = ({
     <SidebarGroup>
       <SidebarMenu>
         {items.map((item) => (
-          <Collapsible key={item.title} asChild defaultOpen={item.isActive}>
-            <SidebarMenuItem>
+          <Collapsible key={item.title} asChild defaultOpen={false}>
+            <SidebarMenuItem >
               <SidebarMenuButton 
               asChild 
               tooltip={item.title}

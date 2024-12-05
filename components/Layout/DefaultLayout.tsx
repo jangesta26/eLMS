@@ -10,27 +10,24 @@ import { Separator } from "@/components/ui/separator"
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 
 import NavUser from '@/components/Sidebar/nav-user'
 import ModeThemeSwitch from '@/components/Switch/ModeThemeSwitch'
 import { usePathname } from 'next/navigation'
+import Footer from '../Footer/Footer'
 
 const DefaultLayout = ({ children }:{  children: React.ReactNode }) => {
   const pathname = usePathname() as string;
-  const titleFixedToShow = pathname === '/' 
-    ? 'Overview' 
-    : `${pathname.slice(1).charAt(0).toUpperCase() + pathname.slice(2)}`;
-
+  const title = pathname?.split("/").filter(Boolean);
+  const displayTitle = pathname === '/' ? 'Overview' : title[0]?.charAt(0).toUpperCase() + title[0]?.slice(1);
   return (
     <SidebarProvider>
       <AppSidebar />
       <SidebarInset>
-        <header className="shrink-0 border-b">
+        <header className="shrink-0 border-b sticky">
           <div className='w-full flex items-center justify-between'>
             <div className="flex h-16 items-center gap-2 px-4">
               <SidebarTrigger 
@@ -47,7 +44,7 @@ const DefaultLayout = ({ children }:{  children: React.ReactNode }) => {
                   </BreadcrumbItem>
                   <BreadcrumbSeparator className="hidden md:block" /> */}
                   <BreadcrumbItem>
-                    <BreadcrumbPage className='text-xl font-bold'>{titleFixedToShow}</BreadcrumbPage>
+                    <BreadcrumbPage className='text-xl font-bold'>{displayTitle}</BreadcrumbPage>
                   </BreadcrumbItem>
                 </BreadcrumbList>
               </Breadcrumb>
@@ -63,6 +60,7 @@ const DefaultLayout = ({ children }:{  children: React.ReactNode }) => {
           </div>
         </header>
           {children}
+          <Footer />
       </SidebarInset>
     </SidebarProvider>
   )

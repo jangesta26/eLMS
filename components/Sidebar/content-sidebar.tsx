@@ -10,11 +10,12 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
 import NavMain from "./nav-main"
-import NavSecondary from "./nav-secondary"
+import { CourseContentData } from "@/utils/courseContent"
+import { Label } from "../ui/label"
 import Image from "next/image"
-import { data } from "@/utils/sideBarItem"
+import ContentNavMain from "./content-navMain"
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function ContentSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   
   return (
     <Sidebar variant="inset" {...props} className="px-0">
@@ -34,7 +35,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
                   <span className="truncate font-semibold">eLMS</span>
-                  <span className="truncate text-xs">Educational Camp</span>
+                  <Label className="text-sm">Course Content</Label>
                 </div>
               </a>
             </SidebarMenuButton>
@@ -42,9 +43,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarMenu>
       </SidebarHeader>
       <SidebarContent className="border-t border-r-0 md:border-r w-full pt-2">
-
-        <NavMain items={data.navMain} />
-        <NavSecondary items={data.navSecondary} className="mt-auto" />
+        <ContentNavMain items={CourseContentData.navMain} />
       </SidebarContent>
       <SidebarFooter>
         {/* footer item */}

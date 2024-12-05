@@ -4,7 +4,7 @@ import { Search } from 'lucide-react'
 
 const SearchInput = () => {
   return (
-    <div className="relative lg:w-1/2">
+    <div className="relative w-full lg:w-1/2">
       {/* The Search icon */}
         <div className="absolute left-3 top-1/2 transform -translate-y-1/2">
             <Search className="text-muted-foreground" />
