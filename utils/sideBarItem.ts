@@ -62,48 +62,20 @@ export const data = {
         isActive: true,
         items: [
           {
-            title: "Data Science",
-            url: "/course/1",
+            title: "Top Course",
+            url: "/view/top-course/1",
           },
           {
-            title: "Business",
-            url: "/course/2",
+            title: "Heart Course",
+            url: "/view/hear-course/2",
           },
           {
-            title: "Computer Science",
-            url: "#",
+            title: "Chest Course",
+            url: "/view/chest-course/3",
           },
           {
-            title: "Information Technology",
-            url: "#",
-          },
-          {
-            title: "Health",
-            url: "#",
-          },
-          {
-            title: "Arts and Humanities",
-            url: "#",
-          },
-          {
-            title: "Social Sciences",
-            url: "#",
-          },
-          {
-            title: "Physical Science and Engineering",
-            url: "#",
-          },
-          {
-            title: "Math and Logic",
-            url: "#",
-          },
-          {
-            title: "Programming Language",
-            url: "#",
-          },
-          {
-            title: "Personal Developmen",
-            url: "#",
+            title: "Business Course",
+            url: "/view/business-course/4",
           },
         ],
       },

@@ -48,7 +48,7 @@ console.log(segments[1])
                 <SidebarMenuButton 
                 asChild 
                 tooltip={item.title}
-                className={`hover:cursor-pointer ${pathname === item.url ? 'bg-muted-foreground/10' : 'w'}`}
+                className={`hover:cursor-pointer ${pathname === item.url ? 'bg-muted-foreground/10' : 'w-full'}`}
                 >
                 <Button 
                 variant="ghost"
